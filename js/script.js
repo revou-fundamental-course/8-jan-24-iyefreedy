@@ -8,6 +8,9 @@ const areaResultElement = document.querySelector(
     ".result-wrapper #areaResult span"
 );
 const submitButtonElement = document.querySelector("#calculatorForm button");
+const resultWrapperElement = document.querySelector(".result-wrapper");
+const resultContentElement = document.querySelector(".result-content");
+const resultLoaderElement = document.querySelector(".result-loader");
 
 document.addEventListener("DOMContentLoaded", function () {
     const ctx = canvas.getContext("2d");
@@ -27,18 +30,33 @@ document.addEventListener("DOMContentLoaded", function () {
     calculatorForm.addEventListener("submit", function (e) {
         e.preventDefault();
         submitButtonElement.textContent = "Calculating...";
+        perimeterResultElement.innerHTML = "";
+        areaResultElement.innerHTML = "";
+        const sideValue = document.querySelector("input[name=side]").value;
 
-        setTimeout(() => {
-            const sideValue = document.querySelector("input[name=side]").value;
+        const perimeterResult = sideValue * 4;
+        const areaResult = sideValue * sideValue;
 
-            const perimeterResult = sideValue * 4;
-            const areaResult = sideValue * sideValue;
+        let perimeterResultContent = `${sideValue} x 4 = ${perimeterResult}`;
+        let areaResultContent = `${sideValue} x ${sideValue} = ${areaResult}`;
 
-            perimeterResultElement.textContent = `${sideValue} x 4 = ${perimeterResult}`;
-            areaResultElement.textContent = `${sideValue} x ${sideValue} = ${areaResult}`;
+        calculatorForm.reset();
+        submitButtonElement.textContent = "Hitung";
 
-            calculatorForm.reset();
-            submitButtonElement.textContent = "Hitung";
-        }, 2000);
+        typewriting(perimeterResultElement, perimeterResultContent);
+        typewriting(areaResultElement, areaResultContent);
     });
 });
+
+function typewriting(element, textContent) {
+    let i = 0;
+    function typing() {
+        if (i < textContent.length) {
+            element.innerHTML += textContent.charAt(i);
+            i++;
+            setTimeout(typing, 50);
+        }
+    }
+
+    typing();
+}
