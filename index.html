@@ -23,25 +23,80 @@
             <header>
                 <div class="container">
                     <h1>Katik</h1>
-                    <span>Kalkulator Matematik</span>
+                    <div class="typewriter-container">
+                        <span class="typewriter-content">
+                            Kalkulator Matematik</span
+                        >
+                    </div>
                 </div>
             </header>
 
             <main>
                 <div class="container">
-                    <h1>Welcome to KaTik</h1>
-                    <p>
-                        Explore the beauty of mathematics by calculating
-                        squares. Each calculation is a step towards a deeper
-                        understanding.
-                    </p>
+                    <div class="greeting-wrapper">
+                        <h1>Selamat datang di KaTik</h1>
+                        <p>
+                            Jelajahi keindahan matematika dengan menghitung
+                            persegi. Setiap hitungan adalah langkah menuju
+                            pemahaman yang lebih dalam.
+                        </p>
+                    </div>
 
-                    <div class="hero-content">
+                    <div class="shape-wrapper">
                         <canvas
                             id="shapeImage"
-                            width="200"
-                            height="200"
+                            width="150"
+                            height="150"
                         ></canvas>
+
+                        <div class="shape-description">
+                            <h6>Rumus</h6>
+                            <div>
+                                <span>Luas:</span>
+                                <math
+                                    xmlns="http://www.w3.org/1998/Math/MathML"
+                                >
+                                    <msup>
+                                        <mi>s</mi>
+                                        <mn>2</mn>
+                                    </msup>
+                                </math>
+                            </div>
+
+                            <div>
+                                <span>Keliling: </span>
+                                <math
+                                    xmlns="http://www.w3.org/1998/Math/MathML"
+                                >
+                                    <mo>4</mo>
+                                    <mi>s</mi>
+                                </math>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="calculator-wrapper">
+                        <form id="calculatorForm">
+                            <div>
+                                <label for="squareSideField"
+                                    >Sisi persegi</label
+                                >
+                                <input
+                                    type="number"
+                                    id="squareSideField"
+                                    name="side"
+                                />
+                            </div>
+                            <button type="submit">Hitung</button>
+                        </form>
+                    </div>
+
+                    <div class="result-wrapper">
+                        <h1>Hasil</h1>
+                        <p id="areaResult">Luas: <span></span></p>
+                        <p id="perimeterResult">Keliling: <span></span></p>
                     </div>
                 </div>
             </main>
