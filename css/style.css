@@ -1,0 +1,94 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+}
+
+/* Reusable styles */
+.container {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    overflow-x: scroll;
+}
+
+/* Styles goes here */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-wrapper > * {
+    width: 100%;
+}
+
+header {
+    font-family: "Share Tech Mono", monospace;
+    background-color: #4896fc;
+    box-shadow: 0px 0px 8px 3px rgba(176, 176, 176, 0.75);
+    -webkit-box-shadow: 0px 0px 8px 3px rgba(176, 176, 176, 0.75);
+    -moz-box-shadow: 0px 0px 8px 3px rgba(176, 176, 176, 0.75);
+}
+
+header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.25rem;
+}
+
+header span {
+    font-size: 0.725rem;
+    margin-left: 0.5rem;
+}
+
+main {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 2rem;
+}
+
+main .container {
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px 3px rgba(209, 209, 209, 0.66);
+    -webkit-box-shadow: 0px 0px 8px 3px rgba(209, 209, 209, 0.66);
+    -moz-box-shadow: 0px 0px 8px 3px rgba(209, 209, 209, 0.66);
+}
+
+main h1,
+main p {
+    text-align: center;
+}
+
+main h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+main p {
+    font-size: 0.875rem;
+    padding: 0.5rem 1.5rem;
+}
+
+main .hero-content {
+    margin-top: 2rem;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+/* Canvas shape */
+canvas {
+    border: 3px solid #e4f121;
+}
